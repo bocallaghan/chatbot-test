@@ -2,14 +2,15 @@ var restify = require('restify');
 var builder = require('botbuilder');
 var fs = require('fs');
 
-var https_options = {
-  key: fs.readFileSync('/etc/letsencrypt/live/ahealthysliceofhappiness.com/privkey.pem'),
-  certificate: fs.readFileSync('/etc/letsencrypt/live/ahealthysliceofhappiness.com/fullchain.pem')
-};
-
+// Read the configuration files for the TLS certificates and Microsoft chatbot secrets
+var certLocations = JSON.parse(fs.readFileSync("./config/certs.json"));
 var appInfo = JSON.parse(fs.readFileSync("./config/appInfo.json"));
 
-console.log('App info: %s', appInfo);
+// Put together the HTTPS options for the server
+var https_options = {
+  key: fs.readFileSync(certLocations.privateKeyLocation),
+  certificate: fs.readFileSync(certLocations.publicKeyLocation)
+};
 
 // Setup Restify Server
 var server = restify.createServer(https_options);
