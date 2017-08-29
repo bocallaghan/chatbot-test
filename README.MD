@@ -13,7 +13,10 @@ You'll also need to create a folder in the root of the project called config. Wi
 This is a simple json file as follows:
 
 ```
-{ "privateKeyLocation":"/path/to/private/key.pem", "publicKeyLocation":"/path/to/public/key.pem"}
+{
+    "privateKeyLocation":"/path/to/private/key.pem", 
+    "publicKeyLocation":"/path/to/public/key.pem"
+}
 ```
 
 #### appInfo.json
