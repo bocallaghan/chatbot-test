@@ -1,6 +1,6 @@
 # Brent's sample chatbot
 
-A simple chatbot based on the Microsoft chatbot system
+A simple chatbot based on the Microsoft chatbot system. I've also included two scripts in the "scripts" folder for opening and closing ports in the firewall - useful if this isn't your server's primary use.
 
 ### Prerequisites
 
